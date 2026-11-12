@@ -146,3 +146,55 @@ Future improvements include:
 ## Disclaimer
 
 This is a cloud engineering learning and portfolio project. The implemented infrastructure should not be considered production-ready. The proposed components and recovery objectives require further implementation and testing.
+
+## Actual Deployed AWS Architecture Diagram
+
+This diagram shows the AWS resources currently deployed through Terraform. It is separate from the proposed architecture described above.
+
+```mermaid
+flowchart TB
+    subgraph AWS["AWS Cloud - eu-north-1"]
+        subgraph VPC["Training Portal VPC - 10.20.0.0/16"]
+            IGW["Internet Gateway"]
+            PUBRT["Public Route Table"]
+            PRIVRT["Private Route Table"]
+            P1["Public Subnet 1"]
+            P2["Public Subnet 2"]
+            S1["Private Subnet 1"]
+            S2["Private Subnet 2"]
+
+            IGW --> PUBRT
+            PUBRT --> P1
+            PUBRT --> P2
+            PRIVRT --> S1
+            PRIVRT --> S2
+        end
+
+        subgraph STORAGE["Amazon S3 - Regional Service"]
+            BUCKET["Private Training Documents Bucket"]
+            ENC["AES-256 Encryption"]
+            VER["Versioning Enabled"]
+            BLOCK["Block Public Access"]
+
+            BUCKET --> ENC
+            BUCKET --> VER
+            BUCKET --> BLOCK
+        end
+
+        subgraph IAM["AWS Identity and Access Management"]
+            APP["Application IAM Role"]
+            POLICY["Restricted S3 Access Policy"]
+            EXEC["ECS Execution IAM Role"]
+
+            APP --> POLICY
+            POLICY --> BUCKET
+        end
+    end
+```
+
+**Implementation notes:**
+- Private subnets have no NAT Gateway or default internet route.
+- The S3 bucket is private, encrypted and versioned.
+- The application IAM role and policy exist, but no running application currently uses them.
+- The ECS execution role remains from an earlier experiment.
+- The website, database and monitoring alarms have not yet been deployed.
