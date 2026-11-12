@@ -12,3 +12,18 @@ output "private_subnet_ids" {
   description = "IDs of the private subnets"
   value       = aws_subnet.private[*].id
 }
+
+output "s3_document_bucket_name" {
+  description = "Name of the private training documents bucket"
+  value       = aws_s3_bucket.training_documents.bucket
+}
+
+output "s3_document_bucket_arn" {
+  description = "ARN of the private training documents bucket"
+  value       = aws_s3_bucket.training_documents.arn
+}
+
+output "app_task_role_arn" {
+  description = "IAM role ARN for the training portal application"
+  value       = aws_iam_role.training_portal_app.arn
+}
