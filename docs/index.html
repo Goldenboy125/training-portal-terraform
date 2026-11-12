@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Portal</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #1e293b;
+        }
+        header {
+            background: #123b70;
+            color: white;
+            padding: 25px 8%;
+        }
+        header h1 { margin: 0; }
+        nav { margin-top: 15px; }
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+        .hero {
+            background: white;
+            padding: 65px 8%;
+            text-align: center;
+        }
+        .hero h2 { font-size: 34px; }
+        .hero p { color: #64748b; }
+        .courses {
+            padding: 35px 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #00000010;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #123b70;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Training Portal</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Our Training Portal</h2>
+        <p>Learn new skills, develop your knowledge and build your future.</p>
+    </section>
+
+    <section class="courses" id="courses">
+        <div class="card">
+            <h3>Cloud Computing</h3>
+            <p>Learn cloud infrastructure and AWS fundamentals.</p>
+        </div>
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Build modern websites and digital applications.</p>
+        </div>
+        <div class="card">
+            <h3>Cybersecurity</h3>
+            <p>Understand security principles and protect digital systems.</p>
+        </div>
+    </section>
+
+    <footer id="about">
+        <p>Training Portal | Learning Today, Leading Tomorrow</p>
+    </footer>
+</body>
+</html>
