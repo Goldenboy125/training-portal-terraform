@@ -198,3 +198,8 @@ flowchart TB
 - The application IAM role and policy exist, but no running application currently uses them.
 - The ECS execution role remains from an earlier experiment.
 - The website, database and monitoring alarms have not yet been deployed.
+
+## Supporting Project Documents
+
+- [Actual Deployed AWS Architecture Diagram](docs/architecture.md)
+- [AWS Cost Estimate and Cost Controls](docs/cost-estimate.md)
