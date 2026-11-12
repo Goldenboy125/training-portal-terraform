@@ -27,3 +27,8 @@ output "app_task_role_arn" {
   description = "IAM role ARN for the training portal application"
   value       = aws_iam_role.training_portal_app.arn
 }
+
+output "ecs_execution_role_arn" {
+  description = "IAM execution role ARN for ECS tasks"
+  value       = aws_iam_role.ecs_execution.arn
+}
