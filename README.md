@@ -30,8 +30,19 @@ eu-north-1 (Europe - Stockholm)
 
 ## Project Status
 
-Terraform configuration initialized and validated.
-Infrastructure deployment is being developed in stages.
+### Completed
+- Terraform project initialized and validated.
+- AWS VPC created in eu-north-1.
+- Two public subnets deployed across two Availability Zones.
+- Two private subnets deployed across two Availability Zones.
+- Internet Gateway configured.
+- Public and private route tables configured.
+
+### In Progress
+- Secure S3 document storage.
+- Application hosting.
+- Database infrastructure.
+- Monitoring, backups and disaster recovery.
 
 ## Cost and Security
 
