@@ -1,14 +1,14 @@
-output "aws_region" {
-  description = "AWS region selected for deployment"
-  value       = var.aws_region
+output "vpc_id" {
+  description = "ID of the training portal VPC"
+  value       = aws_vpc.training_portal.id
 }
 
-output "project_name" {
-  description = "Project name"
-  value       = var.project_name
+output "public_subnet_ids" {
+  description = "IDs of the public subnets"
+  value       = aws_subnet.public[*].id
 }
 
-output "environment" {
-  description = "Deployment environment"
-  value       = var.environment
+output "private_subnet_ids" {
+  description = "IDs of the private subnets"
+  value       = aws_subnet.private[*].id
 }
